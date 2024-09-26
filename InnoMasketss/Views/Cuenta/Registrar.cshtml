@@ -1,0 +1,71 @@
+﻿@model Usuario
+
+@{
+    ViewData["Title"] = "Registrar";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5 shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="text-center">Registro de usuarios</h2>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post" asp-action="Registrar" asp-controller="Cuenta">
+                        @Html.AntiForgeryToken()
+
+                        <!-- Campo Nombre -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Nombre" class="form-label">Nombre</label>
+                            <input asp-for="Nombre" class="form-control" placeholder="Ingrese su nombre" required />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+
+                        <!-- Campo Apellido -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Apellido" class="form-label">Apellido</label>
+                            <input asp-for="Apellido" class="form-control" placeholder="Ingrese su apellido" required />
+                            <span asp-validation-for="Apellido" class="text-danger"></span>
+                        </div>
+
+                        <!-- Campo NombreUsuario -->
+                        <div class="form-group mb-3">
+                            <label asp-for="NombreUsuario" class="form-label">Nombre de Usuario</label>
+                            <input asp-for="NombreUsuario" class="form-control" placeholder="Ingrese su nombre de usuario" required />
+                            <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+                        </div>
+
+                        <!-- Campo Correo -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Correo" class="form-label">Correo electrónico</label>
+                            <input asp-for="Correo" type="email" class="form-control" placeholder="Ingrese su correo" required />
+                            <span asp-validation-for="Correo" class="text-danger"></span>
+                        </div>
+
+                        <!-- Campo Contraseña -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Contrasena" class="form-label">Contraseña</label>
+                            <input asp-for="Contrasena" type="password" class="form-control" placeholder="Ingrese su contraseña" required />
+                            <span asp-validation-for="Contrasena" class="text-danger"></span>
+                        </div>
+
+                        <!-- Botón Registrarse -->
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-user-plus"></i> Registrarse
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-3" role="alert">
+                    @ViewBag.Error
+                </div>
+            }
+        </div>
+    </div>
+</div>

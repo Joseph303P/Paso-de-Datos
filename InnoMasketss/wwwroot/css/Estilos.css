@@ -1,0 +1,29 @@
+﻿/* Personalización de colores y márgenes */
+body {
+    background-color: #f8f9fa; /* Color de fondo suave */
+}
+
+.card {
+    border-radius: 15px; /* Bordes redondeados para la tarjeta */
+}
+
+.form-control {
+    border-radius: 10px; /* Bordes redondeados para los campos de formulario */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+brand {
+    width: 5px;
+    height: 5px;
+}
+
+
